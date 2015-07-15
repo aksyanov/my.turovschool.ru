@@ -12,12 +12,16 @@ return array(
 
 	'components'=>array(
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=tipclient',
+			'connectionString' => 'mysql:host=localhost;dbname=turovschool',
             'emulatePrepare' => true,
             'username' => 'root',
             'password' => '',
             'charset' => 'utf8',
 		),
+        'authManager'=>array(
+            'class'=>'CDbAuthManager',
+            'connectionID'=>'db',
+        ),
         'errorHandler'=>array(
             'errorAction'=>'site/error',
         ),

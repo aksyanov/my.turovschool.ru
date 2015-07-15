@@ -8,7 +8,6 @@ class UserIdentity extends CUserIdentity
     {
         $user = UsersAR::model()->find('login=:login',array(':login'=>$this->username));
 
-
         if($user == null || $user->count() == 0){
             $this->errorMessage = "Ошибка авторизации. Указанный Вами e-mail не зарегистриован.";
             $this->errorCode=false;
@@ -22,12 +21,7 @@ class UserIdentity extends CUserIdentity
                 $user->hash = $code;
                 $user->save();
 
-                $cookie = new CHttpCookie('tipclientid', $user->id);
-                $cookie->expire = time()+60*60*24*7;
-                Yii::app()->request->cookies['tipclientid'] = $cookie;
-                $cookie = new CHttpCookie('tipclienthash', $user->hash);
-                $cookie->expire = time()+60*60*24*7;
-                Yii::app()->request->cookies['tipclienthash'] = $cookie;
+                WebUser::setUserCookies(array(WebUser::$cookiesIdName=>$user->id,WebUser::$cookiesHashName=>$user->hash));
 
                 $this->_id=$user->id;
                 $this->errorCode=true;
@@ -37,10 +31,6 @@ class UserIdentity extends CUserIdentity
             }
         }
         return $this->errorCode;
-    }
-
-    public function beforeLogin(){
-
     }
 
     /**

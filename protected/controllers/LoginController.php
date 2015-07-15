@@ -29,6 +29,7 @@ class LoginController extends Controller
                 'actions'=>array('index'),
                 'users'=>array('?'),
             ),
+
         );
     }
 

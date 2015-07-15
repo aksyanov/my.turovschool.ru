@@ -21,14 +21,14 @@ class SiteController extends Controller
     public function accessRules()
     {
         return array(
-            /*array('deny',
+            array('deny',
                 'actions'=>array('index'),
                 'users'=>array('?'),
-            ),*/
-            array('allow',
+            ),
+            /*array('allow',
                 'actions'=>array('index'),
                 'users'=>array('*'),
-            ),
+            ),*/
         );
     }
 
