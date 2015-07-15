@@ -50,7 +50,7 @@ class WebUser extends CWebUser {
         }
     }
 
-    static function unsetUserCookies(){
+    static function unsetUserCookies() {
         unset(Yii::app()->request->cookies[self::$cookiesIdName]);
         unset(Yii::app()->request->cookies[self::$cookiesHashName]);
     }

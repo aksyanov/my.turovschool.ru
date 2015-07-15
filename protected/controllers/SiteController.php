@@ -1,78 +1,79 @@
 <?php
 
-class SiteController extends Controller
-{
-    public $layout='main';
+class SiteController extends Controller {
+    public $layout = 'main';
 
-	public function actions()
-	{
-		return array(
-			'index',
-		);
-	}
+    public function actions() {
+        return array(
+            'index',
+        );
+    }
 
-    public function filters()
-    {
+    public function filters() {
         return array(
             'accessControl',
         );
     }
 
-    public function accessRules()
-    {
+    public function accessRules() {
         return array(
             array('deny',
-                'actions'=>array('index'),
-                'users'=>array('?'),
+                'actions' => array('index'),
+                'users' => array('?'),
             ),
-            /*array('allow',
-                'actions'=>array('index'),
-                'users'=>array('*'),
-            ),*/
         );
     }
 
-	public function actionIndex()
-	{
+    public function actionIndex() {
 
-        //$user = UsersAR::model()->find('login=:login',array(':login'=>'test'));
-        //$user = $user[0];
-        /*$user->hash = 'asdasd';
-        $user->save();*/
-        //echo $user->hash;
+        $auth=Yii::app()->authManager;
 
-        /*$cookie = new CHttpCookie('cookie_name', 'asd');
-        $cookie->expire = time()+60*60*24*180;
-        Yii::app()->request->cookies['cookie_name'] = $cookie;*/
-        //unset(Yii::app()->request->cookies['cookie_name']);
+        /*
+        $auth->createOperation('viewAllUsersLogin','Просматривать всех только с Login');
+        $auth->createOperation('viewAllUsersAll','Просматривать всех пользователей');
+        $auth->createOperation('viewUser','Просматривать себя');
+
+        $bizRule='return Yii::app()->user->id==$params["id"];';
+        $task=$auth->createTask('viewUserSelf','Просмотр своей записи',$bizRule);
+        $task->addChild('viewUser');
+
+        $role=$auth->createRole('admin');
+        $role->addChild('viewAllUsersAll');
+
+        $role=$auth->createRole('moderator');
+        $role->addChild('viewAllUsersLogin');
+
+        $role=$auth->createRole('user');
+        $role->addChild('viewUserSelf');
+
+        $auth->assign('admin','adminA');
+        $auth->assign('moderator','moderatorB');*/
+
+        //$auth->assign('user','9');
 
 
-        /*$user = new UsersAR();
-        $user->login = 'sad';
-        $user->password = '24';
-        $user->save();*/
+        if(Yii::app()->user->checkAccess('admin')){
+            echo "hello, I'm admin<br>";
+        }
 
-       /* $users = UsersAR::model()->findAll();
-        foreach($users as $user)
-            echo $user->login;*/
+        if(Yii::app()->user->checkAccess('user')){
+            echo "hello, I'm user<br>";
+        }
 
-		//$this->render('index');
-	}
+        if(Yii::app()->user->checkAccess('moderator')){
+            echo "hello, I'm moderator<br>";
+        }
 
-    public function actionTest(){
-        $salt = '1876eh2oij';
-        $password = 'qwerty';
-        echo 'Пароль: '.$password.'<br>';
-        echo 'Пароль md5 md5 salt: '.md5(md5($password.$salt)).'<br>';
-        echo 'Логин: test<br>';
-        echo 'Соль: <br>';
+        if(Yii::app()->user->checkAccess('viewUserSelf',array('id'=>19))){
+            echo "hello, I'm assadasd<br>";
+        }
+
+        //$this->render('index');
     }
 
-    public function actionError()
-    {
-        if($error=Yii::app()->errorHandler->error)
-        {
-            if(Yii::app()->request->isAjaxRequest)
+    public function actionError() {
+        if ($error = Yii::app()->errorHandler->error) {
+            if (Yii::app()->request->isAjaxRequest)
                 echo $error['message'];
             else
                 $this->render('error', $error);
