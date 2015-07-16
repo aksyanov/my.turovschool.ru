@@ -1,6 +1,18 @@
-html, body{
+html, body {
     height: 100%;
     margin: 0;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Verdana', sans-serif;
     color: #717171;
+}
+
+a {
+    text-decoration: none;
+}
+
+.clear {
+    clear: both;
+}
+
+.margintop15{
+    margin-top: 15px;
 }

@@ -1,0 +1,95 @@
+/*border-radius*/
+.course-top-logo, .course-top-logo img, .course-top-info {
+    -webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    -ms-border-radius: 5px 5px 0 0;
+    -o-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+}
+
+.courses-container{
+    width: 960px;
+    margin: 0 auto;
+}
+
+.course-container{
+    float: left;
+    margin-right: 15px;
+}
+
+.course-middle {
+    -webkit-transition: margin-top 0.3s ease; /*ease*/
+    -moz-transition: margin-top 0.3s ease;
+    -o-transition: margin-top 0.3s ease;
+    transition: margin-top 0.3s ease;
+}
+
+.course-container:hover .course-middle{
+    /*margin-top: -200px;*/
+}
+
+.course-middle {
+    -webkit-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    -ms-border-radius: 0 0 5px 5px;
+    -o-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+}
+
+.course-container {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.course-container {
+    height: 320px;
+    width: 305px;
+}
+
+.course-top {
+    height: 170px;
+    width: 100%;
+}
+
+.course-top-logo {
+    height: 170px;
+    width: 100%;
+    background: url("../images/courseslogo/ono.jpg") no-repeat;
+    background-size: cover;
+}
+
+.course-top-info{
+    height: 150px;
+    width: 285px;
+    margin-top: -170px;
+    /*margin-top: -35px;*/
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    background-color: rgba(191, 178, 151, 0.70);
+}
+
+.course-top-info-name {
+
+}
+
+.course-container a{
+    color: white;
+    font-size: 18px;
+}
+
+.course-middle {
+    width: 283px;
+    height: 130px;
+    border: solid rgb(228,223,215) thin;
+    border-top: none;
+    background-color: rgba(255,250,240,1);
+    color: #000000;
+    padding: 10px;
+}
+
+.course-info {
+
+}

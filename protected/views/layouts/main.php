@@ -8,6 +8,14 @@
     <script src="<?=Yii::app()->request->baseUrl?>/scripts/common.js"></script>
 </head>
 <body>
+
+<div class="main-content">
+    <div class="">
+
+    </div>
+</div>
+
 <?=$content?>
+
 </body>
 </html>

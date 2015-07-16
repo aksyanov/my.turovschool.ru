@@ -25,34 +25,30 @@ class SiteController extends Controller {
     }
 
     public function actionIndex() {
+         /*$auth=Yii::app()->authManager;
 
-        $auth=Yii::app()->authManager;
+         $auth->createOperation('viewAllUsersLogin','Просматривать всех только с Login');
+         $auth->createOperation('viewAllUsersAll','Просматривать всех пользователей');
+         $auth->createOperation('viewUser','Просматривать себя');
 
-        /*
-        $auth->createOperation('viewAllUsersLogin','Просматривать всех только с Login');
-        $auth->createOperation('viewAllUsersAll','Просматривать всех пользователей');
-        $auth->createOperation('viewUser','Просматривать себя');
+         $bizRule='return Yii::app()->user->id==$params["id"];';
+         $task=$auth->createTask('viewUserSelf','Просмотр своей записи',$bizRule);
+         $task->addChild('viewUser');
 
-        $bizRule='return Yii::app()->user->id==$params["id"];';
-        $task=$auth->createTask('viewUserSelf','Просмотр своей записи',$bizRule);
-        $task->addChild('viewUser');
+         $role=$auth->createRole('admin');
+         $role->addChild('viewAllUsersAll');
 
-        $role=$auth->createRole('admin');
-        $role->addChild('viewAllUsersAll');
+         $role=$auth->createRole('moderator');
+         $role->addChild('viewAllUsersLogin');
 
-        $role=$auth->createRole('moderator');
-        $role->addChild('viewAllUsersLogin');
+         $role=$auth->createRole('user');
+         $role->addChild('viewUserSelf');
 
-        $role=$auth->createRole('user');
-        $role->addChild('viewUserSelf');
+         $auth->assign('admin','adminA');
+         $auth->assign('moderator','moderatorB');
+         $auth->assign('user','9');*/
 
-        $auth->assign('admin','adminA');
-        $auth->assign('moderator','moderatorB');*/
-
-        //$auth->assign('user','9');
-
-
-        if(Yii::app()->user->checkAccess('admin')){
+        /*if(Yii::app()->user->checkAccess('admin')){
             echo "hello, I'm admin<br>";
         }
 
@@ -66,9 +62,9 @@ class SiteController extends Controller {
 
         if(Yii::app()->user->checkAccess('viewUserSelf',array('id'=>19))){
             echo "hello, I'm assadasd<br>";
-        }
+        }*/
 
-        //$this->render('index');
+        $this->render('index');
     }
 
     public function actionError() {
