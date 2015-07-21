@@ -10,14 +10,15 @@ return array(
 		'application.components.*',
         'application.widgets.*',
         'application.widgets.CoursesBox.*',
+        'application.widgets.TopMenu.*',
 	),
 
 	'components'=>array(
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=turovschool',
             'emulatePrepare' => true,
-            'username' => 'root',
-            'password' => '',
+            'username' => 'vsmile',
+            'password' => 'smile4Mysql',
             'charset' => 'utf8',
 		),
         'authManager'=>array(

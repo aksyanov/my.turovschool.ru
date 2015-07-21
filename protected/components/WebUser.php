@@ -1,7 +1,7 @@
 <?php
 
 class WebUser extends CWebUser {
-    //public $allowAutoLogin = true;
+
     static $cookiesIdName = 'tipclientid';
     static $cookiesHashName = 'tipclienthash';
 
@@ -31,6 +31,8 @@ class WebUser extends CWebUser {
             } else {
                 return true;
             }
+        }else{
+            return false;
         }
 
     }

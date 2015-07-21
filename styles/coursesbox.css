@@ -7,27 +7,6 @@
     border-radius: 5px 5px 0 0;
 }
 
-.courses-container{
-    width: 960px;
-    margin: 0 auto;
-}
-
-.course-container{
-    float: left;
-    margin-right: 15px;
-}
-
-.course-middle {
-    -webkit-transition: margin-top 0.3s ease; /*ease*/
-    -moz-transition: margin-top 0.3s ease;
-    -o-transition: margin-top 0.3s ease;
-    transition: margin-top 0.3s ease;
-}
-
-.course-container:hover .course-middle{
-    /*margin-top: -200px;*/
-}
-
 .course-middle {
     -webkit-border-radius: 0 0 5px 5px;
     -moz-border-radius: 0 0 5px 5px;
@@ -41,6 +20,28 @@
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
+}
+
+.courses-container{
+    width: 960px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.course-container{
+    float: left;
+    margin-right: 15px;
+}
+
+.course-info {
+    -webkit-transition: margin-top 0.3s ease; /*ease*/
+    -moz-transition: margin-top 0.3s ease;
+    -o-transition: margin-top 0.3s ease;
+    transition: margin-top 0.3s ease;
+}
+
+.course-container:hover .course-info{
+    margin-top: -135px;
 }
 
 .course-container {
@@ -60,21 +61,6 @@
     background-size: cover;
 }
 
-.course-top-info{
-    height: 150px;
-    width: 285px;
-    margin-top: -170px;
-    /*margin-top: -35px;*/
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 5px;
-    background-color: rgba(191, 178, 151, 0.70);
-}
-
-.course-top-info-name {
-
-}
-
 .course-container a{
     color: white;
     font-size: 18px;
@@ -86,10 +72,75 @@
     border: solid rgb(228,223,215) thin;
     border-top: none;
     background-color: rgba(255,250,240,1);
+    /*background-color: #FFF0CE;*/
     color: #000000;
     padding: 10px;
+    position: absolute;
 }
 
 .course-info {
+    width: 285px;
+    height: 160px;
+    margin-top: -35px;
+    border-top: none;
+    background-color: rgba(117, 113, 114, 0.71);
+    color: #000000;
+    padding: 10px;
+    float: left;
+    position: relative;
+    color: white;
 
+}
+
+.course-info-author {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.course-info-author-position {
+    margin-top: 5px;
+    font-size: 15px;
+}
+
+.course-info-general {
+    margin-top: 6px;
+    font-size: 13px;
+}
+
+.course-info-general ul {
+    text-decoration: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.course-info-general ul li:hover {
+    color: #d3cad4;
+}
+
+.course-label {
+    height: 20px;
+    width: 100px;
+    color: white;
+    margin-top: 7px;
+    position: absolute;
+    font-size: 15px;
+    padding-left: 5px;
+    text-align: center;
+}
+
+.label-new {
+    background-color: orange;
+}
+
+.label-soon {
+    background-color: red;
+}
+
+.label-new:before {
+    content: "Новый курс";
+}
+
+.label-soon:before {
+    content: "Скоро";
 }
