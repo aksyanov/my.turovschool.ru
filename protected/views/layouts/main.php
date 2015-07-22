@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="<?=Yii::app()->request->baseUrl?>/styles/common.css">
     <script src="<?=Yii::app()->request->baseUrl?>/scripts/jquery.js"></script>
     <script src="<?=Yii::app()->request->baseUrl?>/scripts/common.js"></script>
+    <script src="<?=Yii::app()->request->baseUrl?>/scripts/topmenu.js"></script>
 </head>
 <body>
 
@@ -21,7 +22,7 @@
         <div class="bottom-menu">
             <ul>
                 <li><h3>Бизнес школа</h3></li>
-                <li class="bottom-menu-el"><a href="#">Курсы</a></li>
+                <li class="bottom-menu-el"><a href="<?=Yii::app()->createUrl('courses')?>">Курсы</a></li>
                 <li class="bottom-menu-el"><a href="#">Возможности</a></li>
             </ul>
         </div>
@@ -36,7 +37,7 @@
         <div class="bottom-menu">
             <ul>
                 <li><h3>Бизнес школа</h3></li>
-                <li class="bottom-menu-el"><a href="#">Курсы</a></li>
+                <li class="bottom-menu-el"><a href="<?=Yii::app()->createUrl('courses')?>">Курсы</a></li>
                 <li class="bottom-menu-el"><a href="#">Возможности</a></li>
             </ul>
         </div>

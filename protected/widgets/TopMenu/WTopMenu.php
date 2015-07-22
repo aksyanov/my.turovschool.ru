@@ -6,7 +6,7 @@
 class WTopMenu extends CWidget {
 
     public function init() {
-        Yii::app()->clientScript->registerCssFile('styles/topmenu.css');
+        Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/styles/topmenu.css');
     }
 
     public function run() {

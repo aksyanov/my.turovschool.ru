@@ -2,7 +2,7 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Личный кабинет школы Турова',
-    'defaultController'=>'site',
+    'defaultController'=>'courses',
 
 	// autoloading model and component classes
 	'import'=>array(
@@ -26,18 +26,18 @@ return array(
             'connectionID'=>'db',
         ),
         'errorHandler'=>array(
-            'errorAction'=>'site/error',
+            'errorAction'=>'courses/error',
         ),
         'urlManager'=>array(
             'urlFormat'=>'path',
             'showScriptName' => false,
             'caseSensitive' => false,
             'rules'=>array(
-
+                'courses/course/<courseName:\w+>' => 'courses/course',
+                //'<controller:\w+>/<action:\w+>/<courseID:\w+>' => '<controller>/<action>',
                 /*'post/<id:\d+>/<title:.*?>'=>'post/view',
                 'posts/<tag:.*?>'=>'post/index',
                 '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',*/
-
             ),
         ),
 

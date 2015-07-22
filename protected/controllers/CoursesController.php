@@ -1,6 +1,6 @@
 <?php
 
-class SiteController extends Controller {
+class CoursesController extends Controller {
     public $layout = 'main';
 
     public function actions() {
@@ -25,7 +25,8 @@ class SiteController extends Controller {
     }
 
     public function actionIndex() {
-         /*$auth=Yii::app()->authManager;
+
+        /*$auth=Yii::app()->authManager;
 
          $auth->createOperation('viewAllUsersLogin','Просматривать всех только с Login');
          $auth->createOperation('viewAllUsersAll','Просматривать всех пользователей');
@@ -65,6 +66,10 @@ class SiteController extends Controller {
         }*/
 
         $this->render('index');
+    }
+
+    public function actionCourse($courseName) {
+        $this->render('course',array('courseName'=>$courseName));
     }
 
     public function actionError() {

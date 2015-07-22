@@ -84,6 +84,11 @@ html, body {
 }
 
 .promo-video {
-    background-color: #0066cc;
     width: 100%;
+}
+
+.course-main-container{
+    width: 960px;
+    margin: 0 auto;
+    margin-top: 20px;
 }

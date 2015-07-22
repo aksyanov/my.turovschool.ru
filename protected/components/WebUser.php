@@ -4,6 +4,12 @@ class WebUser extends CWebUser {
 
     static $cookiesIdName = 'tipclientid';
     static $cookiesHashName = 'tipclienthash';
+    public $rolesName = array(
+        'user'      => 'Пользователь',
+        'moderator' => 'Модератор',
+        'admin'     => 'Админ',
+        'undefined' =>'Неизвестно'
+    );
 
     public function beforeLogin() {
         return true;
@@ -55,5 +61,19 @@ class WebUser extends CWebUser {
     static function unsetUserCookies() {
         unset(Yii::app()->request->cookies[self::$cookiesIdName]);
         unset(Yii::app()->request->cookies[self::$cookiesHashName]);
+    }
+
+    public function getRoleName(){
+
+        if($this->checkAccess('admin'))
+            $role = 'admin';
+        elseif($this->checkAccess('moderator'))
+            $role = 'moderator';
+        elseif($this->checkAccess('user'))
+            $role = 'user';
+        else
+            $role = 'undefined';
+
+        return $this->rolesName[$role];
     }
 } 

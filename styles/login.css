@@ -34,14 +34,25 @@ body {
     border-radius: 4px;
 }
 .login-container-top {
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
+    -webkit-border-radius: 0 0 4px 4px;
+    -moz-border-radius: 0 0 4px 4px;
+    -ms-border-radius: 0 0 4px 4px;
+    -o-border-radius: 0 0 4px 4px;
+    border-radius: 0 0 4px 4px;
 }
 #login-container-top-left {
-    border-top-left-radius: 4px;
+    -webkit-border-radius: 4px 0 0 0;
+    -moz-border-radius: 4px 0 0 0;
+    -ms-border-radius: 4px 0 0 0;
+    -o-border-radius: 4px 0 0 0;
+    border-radius: 4px 0 0 0;
 }
 #login-container-top-right {
-    border-top-right-radius: 4px;
+    -webkit-border-radius: 0 4px 0 0;
+    -moz-border-radius: 0 4px 0 0;
+    -ms-border-radius: 0 4px 0 0;
+    -o-border-radius: 0 4px 0 0;
+    border-radius: 0 4px 0 0;
 }
 
 #login-container {

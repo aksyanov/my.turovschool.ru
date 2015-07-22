@@ -12,7 +12,7 @@
     ?>
 
     <div class="course-container">
-        <a href="#">
+        <a href="<?=Yii::app()->createUrl('courses/course',array('courseName'=>$course['coursename']))?>">
             <div class="course-top">
                 <div class="course-top-labels">
                     <?php if($course['label'] == 'new') {?>
